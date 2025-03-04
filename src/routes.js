@@ -10,6 +10,10 @@ import { getOrders } from "./controllers/orders/getOrdersController.js"
 
 const routes = Router()
 
+routes.get("/", (req, res) => {
+    res.send("Sir. Frango ⚔️")
+})
+
 routes.get("/users", getUsers)
 routes.post("/users", createUser)
 routes.put("/users", updateUser)
