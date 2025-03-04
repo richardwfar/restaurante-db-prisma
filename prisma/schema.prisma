@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  name String
+  cpf String @db.Char(11)
+  phone String
+  email String @unique
+  street String
+  number Int
+  add_info String?
+  neighborhood String
+  city String
+  cep Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders Order[]
+  @@map("clientes")
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+  date DateTime @default(now())
+  amountTotal Decimal @db.Decimal(10,2)
+  status String
+  updatedAt DateTime @updatedAt
+  users User @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId Int
+  @@map("pedidos")
+}
