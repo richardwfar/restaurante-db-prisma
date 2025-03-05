@@ -33,5 +33,29 @@ model Order {
   updatedAt DateTime @updatedAt
   users User @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId Int
+  items Item[]
   @@map("pedidos")
+}
+
+model Item {
+  id Int @id @default(autoincrement())
+  orderId Int
+  orders Order @relation(fields: [orderId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  foodId Int
+  foods Food @relation(fields: [foodId], references: [id])
+  unit Int
+  unitPrice Decimal @db.Decimal(10, 2)
+  subTotal Decimal @db.Decimal(10, 2)
+  @@map("itens_pedido")
+}
+
+model Food {
+  id Int @id @default(autoincrement())
+  name String
+  desc String
+  price Decimal @db.Decimal(10,2)
+  category String
+  stock Int?
+  items Item[]
+  @@map("comidas")
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário de cadastro de novos usuários</title>
+    </head>
+    <body>
+        <h1>Formulário de Cadastro</h1>
+        <form action="/users/create" method="post">
+            <input type="text" name="name" placeholder="Digite seu nome" required>
+            <input type="number" name="cpf" placeholder="Digite seu CPF" required>
+            <input type="number" name="phone" placeholder="Digite seu número de telefone" required>
+            <input type="email" name="email" placeholder="Digite seu email" required>
+            <h3>Endereço</h3>
+            <input type="text" name="street" placeholder="Digite seu logradouro" required>
+            <input type="number" name="number" placeholder="Número" required>
+            <input type="text" name="add_info" placeholder="Complemento">
+            <input type="text" name="neighborhood" placeholder="Bairro" required>
+            <input type="text" name="city" placeholder="Cidade" required>
+            <input type="number" name="cep" placeholder="CEP" required>
+            <button type="submit">Cadastrar usuário</button>
+        </form>
+    </body>
+</html>

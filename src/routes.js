@@ -15,7 +15,7 @@ routes.get("/", (req, res) => {
 })
 
 routes.get("/users", getUsers)
-routes.post("/users", createUser)
+routes.post("/users/create", createUser)
 routes.put("/users", updateUser)
 routes.delete("/users", deleteUser)
 
