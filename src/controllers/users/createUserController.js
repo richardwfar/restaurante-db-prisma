@@ -22,19 +22,17 @@ export const createUser = async (req, res) => {
                 phone,
                 email,
                 street,
-                number,
+                number: Number(number),
                 add_info,
                 neighborhood,
                 city,
-                cep
+                cep: Number(cep)
             }
         })
 
         res.status(200).json(user)
-        alert("Usuário cadastrado!")
     } catch(error) {
         console.log(error)
-        alert("Erro ao cadastrar usuário!")
         res.status(400).json({ error:"Erro ao tentar cadastrar usuário" })
     }
 }
