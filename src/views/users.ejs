@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="stylesheet" href="/styles/userStyle.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Usuários cadastrados</h1>
+
+        <div class="user-list">
+            <% users.forEach(user => {%>
+                <div class="user">
+                    <p>Nome: <%= user.name %></p>
+                    <p>CPF: <%= user.cpf %></p>
+                    <p>Telefone: <%= user.phone %></p>
+                    <p>Email: <%= user.email %></p>
+                    <p>Rua: <%= user.street %></p>
+                    <p>Número: <%= user.number %></p>
+                    <p>Complemento: <%= user.add_info %></p>
+                    <p>Bairro: <%= user.neighborhood %></p>
+                    <p>Cidade: <%= user.city %></p>
+                    <p>CEP: <%= user.cep %></p>
+                </div>
+            <%})%>
+        </div>
+    </body>
+</html>
