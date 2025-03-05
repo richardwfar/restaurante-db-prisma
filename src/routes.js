@@ -14,6 +14,8 @@ import { getOrders } from "./controllers/orders/getOrdersController.js"
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+/* app.use(express.static(path.join(__dirname, ".", "views"))) */
+
 const routes = Router()
 
 routes.get("/", (req, res) => {
