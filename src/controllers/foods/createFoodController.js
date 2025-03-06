@@ -14,7 +14,7 @@ export const createFood = async (req, res) => {
     const file = req.file
 
     try {
-        const uploadResult = await cloudinary.uploader.upload_stream(
+        const uploadResult = cloudinary.uploader.upload_stream(
             { resource_type: "auto" },
             async (error, result) => {
                 if(error) {
@@ -38,8 +38,8 @@ export const createFood = async (req, res) => {
             }
         )
 
-        file.stream = createReadStream(file.buffer)
-        file.stream.pipe(uploadResult)  
+        const stream = createReadStream(file.buffer)
+        stream.pipe(uploadResult)  
     } catch(error) {
         console.log(error)
         res.status(400).json({ error:"Ocorreu um erro ao tentar cadastrar o produto" })
