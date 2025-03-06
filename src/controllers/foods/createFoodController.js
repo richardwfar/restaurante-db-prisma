@@ -22,7 +22,7 @@ export const createFood = async (req, res) => {
                 }
 
                 const imageUrl = result.secure_url
-
+                console.log(prisma.food)
                 const food = await prisma.food.create({
                     data: {
                         name,
