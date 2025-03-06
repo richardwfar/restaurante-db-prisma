@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário de cadastro de novos pratos</title>
+    </head>
+    <body>
+        <h1>Formulário de Cadastro</h1>
+        <form action="/create-food" method="post" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Nome do prato" required>
+            <!-- <input type="text" name="desc" placeholder="Descrição do prato" required> -->
+            <textarea name="desc" style="resize: both;" placeholder="Descrição do prato" ></textarea>
+            <input type="number" name="price" placeholder="Preço(R$)" step="0.01" required>
+            <input type="text" name="category" placeholder="Categoria do prato" required>
+            <input type="number" name="stock" placeholder="Estoque">
+            <input type="file" name="image" placeholder="Selecione uma imagem para o prato">
+            <button type="submit">Cadastrar prato</button>
+        </form>
+    </body>
+</html>

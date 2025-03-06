@@ -1,19 +1,21 @@
 import express from "express"
+
+
+import routes from "./src/routes.js"
+
 import path from "path"
 import { dirname } from "path"
 import { fileURLToPath } from "url"
-import routes from "./src/routes.js"
-
-const app = express()
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+const app = express()
 
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, ".", "src", "views"))
 
 app.use(express.static(path.join(__dirname, ".", "src", "public")))
-/* app.use(express.static(path.join(__dirname, ".", "src", "views"))) */
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

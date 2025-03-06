@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Pratos cadastrados no cardápio</h1>
+        <div class="food-list">
+            <div class="food">
+                <% foods.forEach(food => { %>
+                    <img src="<%= food.imageUrl %>" alt="<%= food.name %>">
+                    <p>Nome do prato: <%= food.name %></p>
+                    <p>Descrição do prato: <%= food.desc %></p>
+                    <p>Preço R$ : <%= food.price %></p>
+                    <p>Categoria: <%= food.category %></p>
+                    <p>Estoque: <%= food.stock %></p>
+                <% }) %>
+            </div>
+        </div>
+    </body>
+</html>
