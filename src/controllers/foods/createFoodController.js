@@ -23,7 +23,7 @@ export const createFood = async (req, res) => {
 
                 const imageUrl = result.secure_url
                 
-                const food = await prisma.food.create({
+                const food = await prisma.food.createMany({
                     data: {
                         name,
                         desc,
